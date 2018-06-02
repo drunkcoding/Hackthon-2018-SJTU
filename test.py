@@ -8,7 +8,7 @@ visual_recognition = VisualRecognitionV3(
     url='https://gateway.watsonplatform.net/visual-recognition/api',
     iam_api_key='LZeswBjOVIRsjkvYDIlJaYU6kYrb59eAQh6_7FmTTSTV')  # Optional
 
-with open('./kettle.jpg', 'rb') as images_file:
+with open('./pp.jpg', 'rb') as images_file:
     classes = visual_recognition.classify(
         images_file,
         threshold='0.55',
@@ -16,10 +16,12 @@ with open('./kettle.jpg', 'rb') as images_file:
 
 classifiers = classes['images'][0]['classifiers']
 
-print(classifiers)
+# print(classifiers)
 
-food_classes = classifiers[0]['name']
-simple_classes = classifiers[1]['classes']
+food_classes = classifiers[0]['classes'] if (
+    classifiers[0]['name'] == 'food') else classifiers[1]['classes']
+simple_classes = classifiers[1]['classes'] if (
+    classifiers[1]['name'] == 'sample') else classifiers[0]['classes']
 
 food_type = simple_type = None
 nList = None
@@ -44,5 +46,5 @@ else:
 
 print(nList)
 
-print(food_type)
-print(simple_type)
+# print(food_type)
+# print(simple_type)
