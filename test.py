@@ -16,21 +16,26 @@ with open('./kettle.jpg', 'rb') as images_file:
 
 classifiers = classes['images'][0]['classifiers']
 
-food_classes = classifiers[0]['classes']
+print(classifiers)
+
+food_classes = classifiers[0]['name']
 simple_classes = classifiers[1]['classes']
 
+food_type = simple_type = None
+nList = None
 
-max = 0
-for dict in food_classes:
-    if (dict['score'] > max):
-        max = dict['score']
-        food_type = dict['class']
+max_t = 0
+for element in food_classes:
+    if (element['score'] > max_t):
+        max_t = element['score']
+        food_type = element['class']
 
-max = 0
-for dict in simple_classes:
-    if (dict['score'] > max):
-        max = dict['score']
-        simple_type = dict['class']
+max_t = 0
+for element in simple_classes:
+    if (element['score'] > max_t):
+        max_t = element['score']
+        simple_type = element['class']
+
 
 if (food_type == 'non-food'):
     print(simple_type)

@@ -1,5 +1,5 @@
-from crawler import GetResultCrawler
-from hackscrap.hackscrap.spiders.nutrition_spider import NutritionSpider
+from .crawler import GetResultCrawler
+from .hackscrap.hackscrap.spiders.nutrition_spider import NutritionSpider
 
 
 def scrap_nutrition(food=""):
