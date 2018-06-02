@@ -1,0 +1,16 @@
+{'images': [
+        {'classifiers': [
+                {'classifier_id': 'food', 'name': 'food', 'classes': [
+                        {'class': 'non-food', 'score': 0.993
+                        }
+                    ]
+                },
+                {'classifier_id': 'Simple_987130933', 'name': 'Simple', 'classes': [
+                        {'class': 'kettle', 'score': 0.613
+                        }
+                    ]
+                }
+            ], 'image': './kettle.jpg'
+        }
+    ], 'images_processed': 1, 'custom_classes': 4
+}
